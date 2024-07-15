@@ -59,8 +59,8 @@ public class CaixaEletronico {
        double saque = scanner.nextDouble();
        if (saque <= saldo) {
             saldo -= saque;
-            System.out.printf("Saque de R$ realizado com sucesso.\n", saque);
-            System.out.println("Saque realizado. Seu saldo atual é: R$" + saldo);
+            System.out.printf("Saque de R$ realizado com sucesso. R$%.2f\n", saque);
+            System.out.printf("Saque realizado. Seu saldo atual é: R$%.2f", saldo);
        }else{
         System.out.println("Saldo indisponível. Realize um depósito!");
        }
@@ -72,8 +72,8 @@ public class CaixaEletronico {
         double deposito = scanner.nextDouble();
         if (deposito > 0) {
             saldo += deposito;  
-            System.out.println("Depósito realizado com sucesso de R$" + deposito);
-            System.out.println("O seu saldo atual é: R$" + saldo);
+            System.out.printf("Depósito realizado com sucesso de R$%.2f", deposito);
+            System.out.printf("O seu saldo atual é: R$%.2f", saldo);
         }else{
             System.out.println("Valor de depósito inválido. Insira um valor acima de R$10,00");
         }
@@ -81,6 +81,6 @@ public class CaixaEletronico {
     }
 
     private static void consultarSaldo() {
-    System.out.println("O saldo atual da conta é: R$" + saldo);
+    System.out.printf("O saldo atual da conta é: R$%.2f", saldo);
     }
 }
